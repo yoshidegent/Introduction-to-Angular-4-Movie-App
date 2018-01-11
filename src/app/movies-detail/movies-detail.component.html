@@ -1,0 +1,40 @@
+<div class="row" *ngIf="movie">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="movie.poster" [alt]="movie.title" class="responsive-img" />
+        <span class="card-title">{{movie.title}}</span>
+      </div>
+      <div class="card-content grey-text text-darken-4">
+        <div class="row">
+          <span class="col s6">Year</span>
+          <span class="col s6">{{movie.year}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">Plot</span>
+          <span class="col s6">{{movie.plot}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">Runtime</span>
+          <span class="col s6">{{movie.runtime}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">Rating</span>
+          <span class="col s6">{{movie.rating}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">Seen</span>
+          <span class="col s6">
+            <button (click)="hasSeen(!movie.seen)" class="btn">
+              {{ movie.seen ? 'Seen!' : 'Not seen!' }}
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="card-action">
+        <app-button-back></app-button-back>
+        <button (click)="delete()" class="btn red right">Delete movie</button>
+      </div>
+    </div>
+  </div>
+</div>

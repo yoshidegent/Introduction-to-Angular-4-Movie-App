@@ -1,0 +1,7 @@
+<p>
+  <a (click)="selected.emit(movie)">
+    <img [src]="movie.poster" [alt]="movie.title" class="circle" />
+    <span class="title">{{movie.title}}</span>
+  </a>
+</p>
+<p>{{movie.plot}}</p>
